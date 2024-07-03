@@ -16,6 +16,10 @@ class _HomeViewState extends State<HomeView> {
   @override
   void initState() {
     ApiService().getCourses();
+    // ApiService().getLessonVideos();
+
+    // ApiService().getLevelsByCourse();
+
     super.initState();
   }
 
