@@ -1,11 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:task2/view/widget/app_bar.dart';
-import 'package:task2/view/widget/courses_widget.dart';
-import 'package:task2/view/widget/header_tiles.dart';
-import 'package:task2/view/widget/previous_year.dart';
+import 'package:task2/api_service/api_service.dart';
+import 'package:task2/view/widget/home_widget/app_bar.dart';
+import 'package:task2/view/widget/home_widget/courses_widget.dart';
+import 'package:task2/view/widget/home_widget/header_tiles.dart';
+import 'package:task2/view/widget/home_widget/previous_year.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  @override
+  void initState() {
+    ApiService().getCourses();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +32,8 @@ class HomeView extends StatelessWidget {
                 children: [
                   HeaderTiles(),
                   CoursesWidget(),
-                  PracticePreviousYearPapper()
+                  PracticePreviousYearPapper(),
+                  SizedBox(height: 30)
                 ],
               ),
             ),

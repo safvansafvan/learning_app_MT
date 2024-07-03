@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:task2/view/courses/couses_view.dart';
 
 class CoursesWidget extends StatelessWidget {
   const CoursesWidget({super.key});
@@ -19,7 +19,13 @@ class CoursesWidget extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CoursesView(),
+                    ));
+              },
               child: const Text(
                 'See All',
                 style: TextStyle(
@@ -35,11 +41,11 @@ class CoursesWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              buildCircle('assets/svg/9913468.svg', 'KTET',
+              buildCircle('assets/icon/one.png', 'KTET',
                   const Color(0xff14C8C5).withOpacity(0.5)),
-              buildCircle('assets/svg/9913468.svg', 'LP/UP/HST',
+              buildCircle('assets/icon/flag.png', 'LP/UP/HST',
                   const Color(0xffFDDD7A).withOpacity(0.5)),
-              buildCircle('assets/svg/9913468.svg', 'SET',
+              buildCircle('assets/icon/two.png', 'SET',
                   const Color(0xffF5C589).withOpacity(0.5))
             ],
           ),
@@ -49,11 +55,11 @@ class CoursesWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              buildCircle('assets/svg/9913468.svg', 'NET',
+              buildCircle('assets/icon/tree.png', 'NET',
                   const Color(0xffFCA7A9).withOpacity(0.5)),
-              buildCircle('assets/svg/9913468.svg', 'Montessori',
+              buildCircle('assets/icon/four.png', 'Montessori',
                   const Color(0xffC2A9FB).withOpacity(0.5)),
-              buildCircle('assets/svg/9913468.svg', 'Crash ',
+              buildCircle('assets/icon/education.png', 'Crash ',
                   const Color(0xffF868AF).withOpacity(0.5))
             ],
           ),
@@ -68,7 +74,7 @@ class CoursesWidget extends StatelessWidget {
         CircleAvatar(
           radius: 40,
           backgroundColor: color,
-          child: SvgPicture.asset(imagePath),
+          child: Image.asset(imagePath),
         ),
         const SizedBox(height: 5),
         Text(

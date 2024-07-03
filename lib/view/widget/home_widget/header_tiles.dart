@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class HeaderTiles extends StatelessWidget {
   const HeaderTiles({super.key});
@@ -9,13 +8,13 @@ class HeaderTiles extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          buildCard('assets/svg/9913468.svg', 'Exam', const Color(0xffED617B)),
-          buildCard('/assets/svg/download.svg.svg', 'Practice',
-              const Color(0xffFFAF01)),
+          buildCard('assets/icon/exam.png', 'Exam', const Color(0xffED617B)),
           buildCard(
-              'assets/svg/9913468.svg', 'Materials', const Color(0xff24AED2))
+              'assets/icon/tick_mark.png', 'Practice', const Color(0xffFFAF01)),
+          buildCard(
+              'assets/icon/book.png', 'Materials', const Color(0xff24AED2))
         ],
       ),
     );
@@ -32,7 +31,7 @@ class HeaderTiles extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          SvgPicture.asset(
+          Image.asset(
             imagePath,
             width: 50,
             height: 50,
